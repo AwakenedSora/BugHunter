@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">BugHunter</string>
+    <string name="app_tagline">Registre. Corrija. Pontue.</string>
+
+    <!-- Formulário -->
+    <string name="hint_title">Título do problema</string>
+    <string name="hint_module">Módulo / tela</string>
+    <string name="hint_description">Descrição do erro</string>
+    <string name="severity_label">Gravidade</string>
+    <string name="severity_value">%1$d · %2$s</string>
+    <string name="severity_low">Baixa</string>
+    <string name="severity_medium">Média</string>
+    <string name="severity_high">Alta</string>
+    <string name="severity_critical">Crítica</string>
+    <string name="button_register">Registrar bug</string>
+
+    <string name="error_title_required">Dê um nome ao bug</string>
+    <string name="error_module_required">Informe o módulo</string>
+    <string name="error_description_short">Descreva com pelo menos %1$d caracteres</string>
+
+    <!-- Painel -->
+    <string name="stat_total">Total</string>
+    <string name="stat_open">Abertos</string>
+    <string name="stat_fixed">Corrigidos</string>
+    <string name="stat_score">Pontos</string>
+
+    <!-- Lista -->
+    <string name="list_hint">Toque para corrigir · pressione para excluir</string>
+    <string name="empty_list">Nenhum bug registrado. O sistema parece perfeito... por enquanto!</string>
+
+    <!-- Cartão -->
+    <string name="bug_code_format">BUG-%1$03d</string>
+    <string name="bug_module">em %1$s</string>
+    <string name="bug_severity_badge">%1$s · %2$d</string>
+    <string name="status_open">Aberto</string>
+    <string name="status_fixed">✓ Corrigido</string>
+    <string name="cd_bug_open">Bug de gravidade %1$s em aberto</string>
+    <string name="cd_bug_fixed">Bug corrigido</string>
+
+    <!-- Mensagens -->
+    <string name="message_registered">%1$s capturado! Ele está na sua lista.</string>
+    <string name="message_fixed">%1$s esmagado! +%2$d pontos</string>
+    <string name="message_reopened">%1$s voltou a atacar! −%2$d pontos</string>
+    <string name="message_removed">%1$s (%2$s) foi removido da lista</string>
+
+    <!-- Acessibilidade -->
+    <string name="cd_logo">Logotipo do BugHunter: um besouro laranja sob uma mira</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Identidade -->
+    <color name="paper">#FFF4F1EA</color>
+    <color name="ink">#FF1E1B2E</color>
+    <color name="ink_soft">#FF5C5870</color>
+    <color name="hunter_orange">#FFFF6B35</color>
+    <color name="hunter_orange_dark">#FFC94A1C</color>
+    <color name="card_open">#FFFFFFFF</color>
+    <color name="card_stroke">#FFE2DDD2</color>
+    <color name="panel_dark">#FF1E1B2E</color>
+    <color name="panel_text">#FFF4F1EA</color>
+    <color name="panel_label">#FFB7B2C9</color>
+    <color name="error_red">#FFC62828</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bug_spot">#40000000</color>
+
+    <!-- Gravidade -->
+    <color name="severity_low">#FF2A9D8F</color>
+    <color name="severity_medium">#FFE0A100</color>
+    <color name="severity_high">#FFE63946</color>
+
+    <!-- Status -->
+    <color name="status_open">#FFFF6B35</color>
+    <color name="status_fixed">#FF40916C</color>
+    <color name="card_fixed">#FFE7F3EC</color>
+    <color name="card_fixed_stroke">#FF95D5B2</color>
+    <color name="text_fixed">#FF6B7F73</color>
+</resources>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:paddingHorizontal="@dimen/screen_padding"
+    android:paddingTop="@dimen/spacing_medium"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:contentDescription="@string/cd_logo"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:fontFamily="monospace"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:textColor="@color/ink"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textAppTagline"
+        app:layout_constraintStart_toEndOf="@id/imageLogo"
+        app:layout_constraintTop_toTopOf="@id/imageLogo"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textAppTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_tagline"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="@color/hunter_orange_dark"
+        app:layout_constraintBottom_toBottomOf="@id/imageLogo"
+        app:layout_constraintStart_toStartOf="@id/textAppTitle"
+        app:layout_constraintTop_toBottomOf="@id/textAppTitle" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardForm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_open"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/card_stroke"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Título e módulo lado a lado (chain horizontal com pesos) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutTitle"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:hint="@string/hint_title"
+                app:layout_constraintEnd_toStartOf="@id/inputLayoutModule"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:maxLength="60"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutModule"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_module"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@id/inputLayoutTitle"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editModule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLength="30"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierFirstRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="inputLayoutTitle,inputLayoutModule" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutDescription"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:hint="@string/hint_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrierFirstRow">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="300"
+                    android:maxLines="3"
+                    android:minLines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Gravidade: rótulo | SeekBar | valor -->
+            <TextView
+                android:id="@+id/textSeverityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/severity_label"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                android:textColor="@color/ink"
+                app:layout_constraintBottom_toBottomOf="@id/seekSeverity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/seekSeverity" />
+
+            <SeekBar
+                android:id="@+id/seekSeverity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:max="5"
+                android:min="1"
+                android:progress="3"
+                app:layout_constraintEnd_toStartOf="@id/textSeverityValue"
+                app:layout_constraintStart_toEndOf="@id/textSeverityLabel"
+                app:layout_constraintTop_toBottomOf="@id/inputLayoutDescription" />
+
+            <TextView
+                android:id="@+id/textSeverityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill"
+                android:gravity="center"
+                android:minWidth="92dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/seekSeverity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/seekSeverity"
+                tools:backgroundTint="@color/severity_medium"
+                tools:text="3 · Média" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRegister"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="@string/button_register"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekSeverity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Painel de acompanhamento -->
+    <LinearLayout
+        android:id="@+id/layoutStats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_stats_panel"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardForm">
+
+        <LinearLayout style="@style/StatTile">
+            <TextView android:id="@+id/textStatTotal" style="@style/StatValue" tools:text="0" />
+            <TextView style="@style/StatLabel" android:text="@string/stat_total" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/StatTile">
+            <TextView android:id="@+id/textStatOpen" style="@style/StatValue" android:textColor="@color/status_open" tools:text="0" />
+            <TextView style="@style/StatLabel" android:text="@string/stat_open" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/StatTile">
+            <TextView android:id="@+id/textStatFixed" style="@style/StatValue" android:textColor="@color/card_fixed_stroke" tools:text="0" />
+            <TextView style="@style/StatLabel" android:text="@string/stat_fixed" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/StatTile">
+            <TextView android:id="@+id/textStatScore" style="@style/StatValue" android:textColor="@color/severity_medium" tools:text="0" />
+            <TextView style="@style/StatLabel" android:text="@string/stat_score" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textListHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:gravity="center"
+        android:text="@string/list_hint"
+        android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+        android:textColor="@color/ink_soft"
+        app:layout_constraintEnd_toEndOf="@id/layoutStats"
+        app:layout_constraintStart_toStartOf="@id/layoutStats"
+        app:layout_constraintTop_toBottomOf="@id/layoutStats" />
+
+    <!-- A lista ocupa todo o espaço restante: altura 0dp, sem ScrollView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBugs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/screen_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/layoutStats"
+        app:layout_constraintStart_toStartOf="@id/layoutStats"
+        app:layout_constraintTop_toBottomOf="@id/textListHint"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_bug" />
+
+    <TextView
+        android:id="@+id/textEmptyList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding"
+        android:drawablePadding="@dimen/spacing_small"
+        android:gravity="center"
+        android:text="@string/empty_list"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/ink_soft"
+        app:drawableTopCompat="@drawable/ic_bug_fixed"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerBugs"
+        app:layout_constraintEnd_toEndOf="@id/recyclerBugs"
+        app:layout_constraintStart_toStartOf="@id/recyclerBugs"
+        app:layout_constraintTop_toTopOf="@id/recyclerBugs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

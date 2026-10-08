@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="logo_size">44dp</dimen>
+    <dimen name="bug_icon_size">44dp</dimen>
+    <dimen name="severity_stripe">6dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+</resources>

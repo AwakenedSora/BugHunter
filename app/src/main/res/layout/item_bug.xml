@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardBug"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_small"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    tools:cardBackgroundColor="@color/card_open"
+    tools:strokeColor="@color/card_stroke">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/spacing_medium"
+        android:paddingEnd="@dimen/spacing_medium">
+
+        <!-- Faixa lateral com a cor da gravidade -->
+        <View
+            android:id="@+id/viewSeverityStripe"
+            android:layout_width="@dimen/severity_stripe"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/severity_high" />
+
+        <ImageView
+            android:id="@+id/imageBugIcon"
+            android:layout_width="@dimen/bug_icon_size"
+            android:layout_height="@dimen/bug_icon_size"
+            android:layout_marginStart="@dimen/spacing_medium"
+            app:layout_constraintStart_toEndOf="@id/viewSeverityStripe"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:contentDescription="@string/cd_bug_fixed"
+            tools:src="@drawable/ic_bug_high" />
+
+        <TextView
+            android:id="@+id/textBugCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:fontFamily="monospace"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/ink_soft"
+            app:layout_constraintStart_toEndOf="@id/imageBugIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BUG-001" />
+
+        <TextView
+            android:id="@+id/textBugStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:backgroundTint="@color/status_open"
+            tools:text="@string/status_open" />
+
+        <TextView
+            android:id="@+id/textBugTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textBugCode"
+            app:layout_constraintTop_toBottomOf="@id/textBugCode"
+            tools:text="Botão de login não responde" />
+
+        <TextView
+            android:id="@+id/textBugModule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            app:layout_constraintBaseline_toBaselineOf="@id/textBugSeverity"
+            app:layout_constraintEnd_toStartOf="@id/textBugSeverity"
+            app:layout_constraintStart_toStartOf="@id/textBugCode"
+            tools:text="em Tela de login" />
+
+        <TextView
+            android:id="@+id/textBugSeverity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:background="@drawable/bg_pill"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textBugTitle"
+            tools:backgroundTint="@color/severity_high"
+            tools:text="Alta · 4" />
+
+        <TextView
+            android:id="@+id/textBugDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textBugCode"
+            app:layout_constraintTop_toBottomOf="@id/textBugSeverity"
+            tools:text="Ao tocar em Entrar com a senha correta, nada acontece e o carregamento fica girando para sempre." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
